@@ -1,0 +1,13 @@
+{
+  "name": "zoom-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "open": "^0.0.5"
+  },
+  "bin": {
+    "zoom": "./index.js"
+  }
+}

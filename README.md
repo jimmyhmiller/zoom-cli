@@ -1,5 +1,6 @@
 # zoom-cli
 ![](https://img.shields.io/npm/v/zoom-cli.svg?style=flat)
+
 Simple CLI for managing zoom aliases
 
 ## Install

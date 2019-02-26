@@ -1,9 +1,10 @@
 {
   "name": "zoom-cli",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "clipboardy": "^1.2.3",
     "commander": "^2.19.0",
     "open": "^0.0.5"
   },

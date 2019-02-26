@@ -4,6 +4,7 @@ const program = require("commander");
 const fs = require('fs').promises
 const homedir = require('os').homedir();
 const open = require("open");
+const clipboardy = require("clipboardy")
 
 const infoFile = `${homedir}/.zoom-cli.json`
 
@@ -40,10 +41,12 @@ program.addImplicitHelpCommand = () => {};
 
 
 program
-  .version('0.1.0')
+  .version('1.1.0')
   .command('add <name> <url>','Add a zoom channel to known list')
   .command('join <name>', 'join zoom channel')
+  .command('copy <name>', 'copy zoom link to clipboard')
   .command('list', 'list all known zoom channels')
+
 
 program.on("command:add", async ([name, url]) => {
   const settings = await readSettings(infoFile);
@@ -62,6 +65,13 @@ program.on("command:join", async ([name]) => {
   const settings = await readSettings(infoFile);
   const url = settings.aliases[name];
   open(url);
+})
+
+program.on("command:copy", async ([name]) => {
+  const settings = await readSettings(infoFile);
+  const url = settings.aliases[name];
+  await clipboardy.write(url);
+  console.log(`${url} copied to clipboard`)
 })
 
 program.on("command:list", async () => {

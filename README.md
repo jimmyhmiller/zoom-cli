@@ -24,5 +24,6 @@ Options:
 Commands:
   add <name> <url>  Add a zoom channel to known list
   join <name>       join zoom channel
+  copy <name>       copy zoom link to clipboard
   list              list all known zoom channels
 ```
